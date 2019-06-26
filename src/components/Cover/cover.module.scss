@@ -1,0 +1,103 @@
+@import '../../styles/definitions/breakpoints';
+@import '../../styles/modifiers/background';
+@import '../../styles/definitions/colors';
+@import '../../styles/definitions/whitespace';
+@import "../../styles/modifiers/animations";
+
+$cover-gutter: 1.5rem;
+$desktop-gutter: 2rem;
+
+.section {
+  min-height: 500px;
+  padding: 6rem $cover-gutter;
+  position: relative;
+  display: flex;
+  background-repeat: no-repeat;
+  background-size: 1920px;
+  background-position: center;
+
+  @media (#{$min_tablets}) {
+    padding: 8rem $desktop-gutter;
+  }
+
+  @media (min-width: 1920px) {
+    background-size: cover;
+  }
+
+  &__style {
+    color: $white;
+  }
+
+  &__blue_filter {
+    &:before {
+      content: "";
+      background-color: $blue-filter;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+  }
+
+  &__reduced_height {
+    min-height: 400px;
+    padding-bottom: 2.5rem;
+
+    @media (#{$min-tablets}) {
+      padding-bottom: 1.125rem;
+    }
+  }
+
+  &__aligned_vertical {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    align-items: center;
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+}
+
+// Contains Column and rightContent (not children/scroll)
+.row {
+  flex-direction: column;
+  position: relative;
+
+  @media (#{$min_tablets}) {
+    flex-direction: row;
+
+    &__reduced_margin {
+      margin-left: -1rem;
+    }
+  }
+}
+
+.title {
+  margin-bottom: 2.0rem;
+
+  &_email {
+    &:hover {
+      color: $primary;
+    }
+  }
+
+  @media (#{$min_tablets}) {
+    max-width: 38rem;
+  }
+}
+
+.no_margin {
+  margin-bottom: 0;
+}
+
+.body {
+  max-width: 800px;
+
+  @media(#{$min_tablets}) {
+    margin-left: 2.3rem;
+  }
+}

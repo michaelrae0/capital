@@ -1,0 +1,7 @@
+@import '../../styles/definitions/breakpoints';
+
+.section {
+  @media (#{$min-tablets}) {
+    padding-bottom: 10rem;
+  }
+}

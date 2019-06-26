@@ -1,0 +1,19 @@
+@import '../../styles/definitions/breakpoints';
+
+.section {
+  margin-top: -.5rem;
+
+  @media (#{$min-tablets}) {
+    margin-top: -2rem;
+  }
+}
+
+.row {
+  @media (#{$max-tablets}) {
+    justify-content: center;
+  }
+
+  @media (#{$min-tablets}) {
+    margin: 0 0.5rem;
+  }
+}

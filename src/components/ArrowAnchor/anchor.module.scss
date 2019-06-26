@@ -1,0 +1,73 @@
+@import "../../styles/definitions/colors";
+@import "../../styles/definitions/mixins";
+@import "../../styles/definitions/fonts";
+
+$base_width: 20px;
+
+.call_to_action {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  @include font_loader($primary-family, 9, 'n');
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.component {
+
+  &__dark {
+    .title {
+      color: $base-font-color;
+    }
+
+    svg {
+      line {
+        stroke: $base-font-color;
+      }
+
+      polygon, rect {
+        fill: $base-font-color;
+      }
+    }
+  }
+  
+  &:hover {
+    cursor: pointer;
+    
+    svg {
+      width: $base_width * 1.30;
+    }
+  }
+}
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  @include font_loader($primary-family, 9, 'n');
+  letter-spacing: 1px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.svg {
+  display: inline-block;
+  width: $base_width;
+  height: 1em;
+  transition: width 0.2s ease-out;
+  margin-left: 1rem;
+  overflow: visible;
+
+  line {
+    stroke: $white;
+  }
+
+  polygon, rect {
+    fill: $white;
+  }
+}

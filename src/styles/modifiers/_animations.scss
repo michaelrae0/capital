@@ -1,0 +1,51 @@
+
+@import "../definitions/keyframes";
+
+.scroll_reveal {
+  opacity: 0;
+}
+
+.fade_in_bottom {
+  animation: fade_in_bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.fade_in_left {
+  animation: fade_in_left 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.fade_in_right {
+  animation: fade_in_right 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.slide_in_fwd_center {
+	animation: slide_in_fwd_center 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.scale_in_ver_top {
+		animation: scale_in_ver_top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.fade_in_fwd {
+		animation: fade_in_fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.fade_out_bck {
+		animation: fade_out_bck 0.7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.scale_up_center {
+		animation: scale_up_center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+.shake_vertical {
+		animation: shake-vertical 6s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
+}
+
+.fade_in_bottom_delay {
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      //animation-delay:
+      animation: fade_in_bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) #{100 * ($i)}ms both;
+    }
+  }
+}

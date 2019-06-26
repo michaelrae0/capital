@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1em" height="1em" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Arrow</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill-rule="nonzero" transform="translate(15.171573, 11.878680) rotate(-45.000000) translate(-15.171573, -11.878680) " x="11.1715729" y="10.8786797" width="8" height="2"></rect>
+        <polygon id="Rectangle" fill-rule="nonzero" transform="translate(15.171573, 7.878680) rotate(-315.000000) translate(-15.171573, -7.878680) " points="11.1715729 6.87867966 19.1715729 6.87867966 19.1715729 8.87867966 11.1715729 8.87867966"></polygon>
+        <polygon id="Rectangle" fill-rule="nonzero" transform="translate(9.416365, 9.899495) rotate(-360.000000) translate(-9.416365, -9.899495) " points="1.7693065 9.13478905 17.0634241 9.13478905 17.0634241 10.6642008 1.7693065 10.6642008"></polygon>
+    </g>
+</svg>

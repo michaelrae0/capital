@@ -1,0 +1,56 @@
+@import "../../styles/definitions/breakpoints";
+@import '../../styles/definitions/colors';
+@import "../../styles/definitions/whitespace";
+@import "../../styles/modifiers/animations";
+
+.section {
+  padding: 6rem 24px 8rem;
+
+  @media (#{$min-tablets}) {
+    padding: 6rem 32px;
+  }
+}
+
+.title_row {
+  padding-bottom: 0.5rem;
+  @media (#{$min_tablets}) {
+    padding-bottom: 4rem;
+    padding: 4rem 0;
+  }
+}
+
+.title {
+  @media (#{$min-tablets}) {
+    padding-left: 1rem;
+  }
+}
+
+.load_more {
+  display: flex;
+  padding-top: $padding-xs-vertical;
+  margin-top: 3rem;
+ 
+  @media (#{$min_tablets}) {
+    margin-left: 3.6rem;
+  }
+  
+  path {
+    transition: stroke 0.25s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: $primary;
+
+    path {
+      stroke: $primary;
+    }
+  }
+}
+
+.load_arrow {
+  height: 1.1rem;
+  width: 1.1rem;
+  margin-top: 0.5rem;
+  margin-left: 0.8rem;
+}

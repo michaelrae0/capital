@@ -1,0 +1,151 @@
+@import '../../styles/definitions/breakpoints';
+@import '../../styles/definitions/whitespace';
+@import '../../styles/definitions/colors';
+@import "../../styles/definitions/mixins";
+@import "../../styles/definitions/fonts";
+@import "../../styles/modifiers/text";
+@import "../../styles/modifiers/animations";
+
+$panel-gutter: 1.5rem;
+$gutter-desktop: 2rem;
+
+.item {
+  width: calc(100% - (#{$panel-gutter} * 2));
+  max-width: 500px;
+
+  @media (#{$min_tablets}) {
+    width: calc((100% / 3) - (#{$gutter-desktop} * 5/3));
+    margin: 0 $gutter-desktop;
+
+    &:nth-child(3n-2) {
+      margin-left: 0;
+    }
+  }
+  
+  &:hover {
+    .title, .subtitle {
+      color: $primary;
+    }
+  }
+}
+
+.dialog {
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.image_wrapper {
+  overflow: hidden;
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+  padding: 45% 0 0 0;
+
+  @media (#{$min_tablets}) {
+    padding: 75% 0 0 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.03);
+  }
+}
+
+.url {
+  text-decoration: none;
+  display: inline-block;
+  max-height: 420px;
+  width: 100%;
+}
+
+.modal {
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__details {
+    margin-bottom: 2.25rem;
+    @media (#{$min_tablets}) {
+      width: 33%;
+    }
+
+    &__item {
+      display: flex;
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+
+      &__link {
+        margin-top: 1.25rem;
+      }
+    }
+
+    &__item_value {
+      @include font_loader($primary-family, 7, 'n');
+      font-size: 1rem;
+      margin-left: 0.4rem;
+
+      &__link {
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__image_wrapper {
+    width: 100%;
+    border-bottom: 1px solid $gray-light;
+    margin-top: -3rem;
+
+    @media (#{$min-tablets}) {
+      margin-top: -1.5rem;
+    }
+  }
+
+  &__image {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: auto;
+    display: block;
+
+    @media (#{$min-tablets}) {
+      max-width: 428px;
+    }
+  }
+
+  &__content {
+    @media (#{$min_tablets}) {
+      width: calc(66% - 2.5rem);
+      margin-left: 2.5rem;
+    }
+  }
+
+  &__body {
+    padding: 2.5rem 2rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (#{$min_tablets}) {
+      padding: 3.375rem 6.25rem 3.625rem;
+    }
+  }
+
+  &__row {
+    margin-left: -$panel-gutter;
+    margin-right: -$panel-gutter;
+
+    @media(#{$min_tablets}) {
+      margin-left: -3rem;
+      margin-right: -3rem;
+    }
+  }
+}

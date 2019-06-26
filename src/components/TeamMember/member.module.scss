@@ -1,0 +1,139 @@
+@import "../../styles/definitions/breakpoints";
+@import "../../styles/definitions/mixins";
+@import "../../styles/definitions/fonts";
+@import "../../styles/definitions/colors";
+@import "../../styles/modifiers/text";
+@import "../../styles/modifiers/animations";
+
+
+$panel-gutter: 24px;
+$gutter-desktop: 3.3rem;
+
+.item {
+  margin: 1.25rem $panel-gutter;
+  margin-left: $panel-gutter;
+  max-width: 450px;
+  width: calc(100% - (#{$panel-gutter} * 2));
+
+  @media (#{$min_tablets}) {
+    margin: 1rem 0 0 $gutter-desktop;
+    max-width: none;
+    width: calc(50% - (#{$gutter-desktop}));
+  }
+  
+  &:hover {
+    .title, .subtitle {
+      color: $primary;
+    }
+
+    .image {
+      transform:  scale(1.05);
+    }
+  }
+}
+
+.dialog {
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 100% 0 0 0;
+  transition: all 0.6s ease-in-out;
+  width: 100%;
+
+  @media (#{$min-tablets}){
+    padding: 100% 0 0 0;
+    width: 100%;
+  }
+
+  &_wrapper {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    
+    @media (#{$min-tablets}) {
+      width: 40%;
+    }
+  }
+}
+
+// change margins here
+.content {
+  margin: 1.5rem 0 0 1.5rem;
+
+  @media (#{$min_tablets}) {
+    margin: 1.5rem 0 0 1.5rem;
+    float: left;
+    width: calc(60% - 1.5rem)
+  }
+}
+
+.url {
+  text-decoration: none;
+  display: inline-block;
+  max-height: 420px;
+  width: 100%;
+}
+
+.title {
+  line-height: 2rem;
+}
+
+.modal {
+
+  &__top_row {
+    flex-direction: column;
+    @media (#{$min-tablets}) {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    max-width: 311px;
+    margin: 0 auto;
+    width: 100%;
+
+    @media (#{$min-tablets}) {
+      margin: 0;
+      height: 100%;
+    }
+  }
+
+  &__details_wrapper {
+    padding: 2rem 0 0.75rem;
+
+    @media (#{$min-tablets}) {
+      padding: 2rem;
+    }
+  }
+
+  &__details {
+    &__item {
+      font-size: 1rem;
+      line-height: 1.75rem;
+      font-weight: 400;
+    }
+  }
+
+  &__content {
+    padding-top: 0.75rem;
+    margin-bottom: -2rem;
+
+    @media (#{$min-tablets}) {
+      padding-top: 2.125rem;
+      margin-bottom: -0.3175rem;
+    }
+  }
+
+  &__position {
+    padding: 1.3125rem 0 1rem;
+  }
+}

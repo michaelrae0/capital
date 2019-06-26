@@ -1,0 +1,52 @@
+@import '../../styles/definitions/breakpoints';
+@import "../../styles/modifiers/animations";
+
+$feature-gutter: 24px;
+$gutter-desktop: 1.25rem;
+
+.component_grid {
+  margin: 1.25rem $feature-gutter;
+  width: calc(100%);
+
+  @media (#{$min_tablets}) {
+    margin: 0 $gutter_desktop;
+    width: calc(33% - (#{$gutter-desktop} * 2));
+  }
+}
+.component_list {
+  display: flex;
+  width: 100%;
+  max-width: 38rem;
+  margin: 0.75rem;
+  margin-left: $feature_gutter;
+  margin-right: $feature_gutter;
+
+  @media (#{$min_tablets}) {
+    margin-left: $gutter_desktop * 2;
+    margin-right: $gutter_desktop * 2;
+  }
+}
+
+.icon {
+  height: 60px;
+  width: 100%;
+  max-width: 60px;
+  margin-bottom: 0.4rem;
+  margin-left: -0.6rem; // icons have whitespace
+
+  @media (#{$min-tablets}) {
+    margin-left: 0;
+  }
+}
+
+.headline_grid {
+  margin-bottom: 15px;
+}
+.headline_list {
+  margin-top: 10px;
+  margin-left: 15px;
+
+  @media (#{$min-tablets}) {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,238 @@
+@import "../../styles/definitions/breakpoints";
+@import "../../styles/definitions/mixins";
+@import "../../styles/definitions/fonts";
+@import "../../styles/definitions/colors";
+@import "../../styles/definitions/keyframes";
+
+.wrapper {
+  &__state_opened {
+    @media (#{$max-tablets}) {
+      margin-left: 3.75rem;
+      max-width: 300px;
+    }
+
+    .desktop__visible {
+      display: block;
+    }
+    
+    .item {
+      @for $i from 1 through 20 {
+        &:nth-child(#{$i}) {
+          //animation-delay:
+          animation: fade_in_bottom 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) #{100 * ($i - 4)}ms both;
+        }
+      }
+    }
+  }
+}
+
+.item_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (#{$min-tablets}) {
+    flex-direction: row;
+  }
+}
+
+.item_link {
+  @include font_loader($primary-family, 5, 'n');
+  position: relative;
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  color: $gray-darker;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    left: 0;
+    bottom: -10px;
+    background-color: $base-font-color;
+    transition: width .4s cubic-bezier(0.1, 0.88, 0.25, 1);
+  }
+
+  @media (#{$min-tablets}) {
+    font-size: 1rem;
+  }
+
+  &.active {
+    font-weight: 700;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+
+.has_sub_nav {
+  .item_link {
+    &:before {
+      display: none;
+    }
+  }
+
+  .sub_nav_list {
+    transition: all 0.5s ease;
+    white-space: nowrap;
+    margin-bottom: 0.625rem;
+    
+    .sub_nav_list_item {
+      clear: both;
+      width: 100%;
+      text-align: left;
+      height: 34px;
+      
+      &:before {
+        content: none;
+      }
+
+      &:hover {
+        color: $primary;
+      }
+
+      @media (#{$max-tablets}) {
+        a {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+
+  @media (#{$min-tablets}) {
+    .sub_nav_list {
+      position: absolute;
+      left: 0;
+      visibility: hidden;
+      opacity: 0;
+      display: none;
+      background-color: $gray-lighter;
+      padding: 0.5rem 1rem;
+      margin: 0 0 0 -1rem;
+
+      .sub_nav_list_item {
+        height: 40px;
+      }
+    }
+
+    &:hover {
+      .sub_nav_list {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+
+      a {
+        outline: none;
+      }
+    }
+  }
+}
+
+.item {
+  display: block;
+  float: left;
+  transition: all .4s .4s ease-out;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 1.375rem;
+  position: relative;
+  text-align: left;
+
+  @media (#{$min_tablets}) {
+    width: auto;
+    margin: 0 2rem 0 0;
+    transform: none;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.item,
+.sub_nav_list_item {
+  // Fix the "double-tap" issue on iOs
+  @media (hover), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // hover media query not supported in IE11
+    &:hover > {
+      .item_link {
+        &:before {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.desktop__visible {
+  @media (#{$max_tablets}) {
+    display: none;
+  }
+}
+
+.mobile__visible {
+  @media (#{$min_tablets}) {
+    display: none;
+  }
+}
+
+.menu_icon {
+  position: relative;
+  vertical-align: middle;
+  height: 25px;
+  width: 25px;
+  text-indent: -9999px;
+  border-color: transparent;
+  background-color: transparent;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: url(../../images/i--burger--black.svg) no-repeat center / 100% auto;
+  }
+
+  &.menu_icon__state_opened {
+    position: absolute;
+    right: 24px;
+    top: 18px;
+
+    &:before {
+      background: url(../../images/i--cross--gray.svg) no-repeat center / 100% auto;
+    }
+  }
+}
+
+.footer_navigation {
+  .item {
+    @media (#{$min-tablets}) {
+      margin: 0 2rem 0 0;
+    }
+  }
+
+  .item_link {
+    font-size: 0.7rem;
+    @include font_loader($primary-family-bold, 9, 'n');
+    line-height: 0.85rem;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:before,
+    &.active {
+      content: none;
+    }
+
+    @media (#{$max-tablets}) {
+      font-size: 0.9rem;
+      line-height: 2.3rem;
+    }
+  }
+}

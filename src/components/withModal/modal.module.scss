@@ -1,0 +1,17 @@
+@import "../../styles/definitions/colors";
+
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba($white, 0.6);
+  top: 0;
+}
+
+.dialog {
+  &:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}

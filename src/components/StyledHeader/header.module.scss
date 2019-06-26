@@ -1,0 +1,17 @@
+@import "../../styles/definitions/colors";
+
+.styled {
+  padding-bottom: 0.8rem;
+  position: relative;
+  margin-bottom: 1rem;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 35px;
+    height: 4px;
+    background-color: $primary;
+  }
+}

@@ -1,0 +1,106 @@
+@import "../../styles/definitions/breakpoints";
+@import "../../styles/definitions/mixins";
+@import "../../styles/definitions/fonts";
+@import "../../styles/definitions/colors";
+
+$gutter-desktop: 32px;
+
+.site__footer {
+  font-size: 11px;
+  padding: 6rem 0 3.625rem;
+
+  @media (#{$min_tablets}) {
+    padding: 1.4375rem $gutter-desktop;
+    color: $gray;
+    min-height: 120px;
+  }
+}
+
+.navigation {
+  width: 100%;
+}
+
+.box {
+  margin: 0.5rem 0;
+  width: 100%;
+  @media (#{$max_phones}) {
+    flex: 1;
+    flex-basis: 100%;
+    display: flex;
+  }
+
+  &__left {
+    margin-bottom: 4rem;
+    @media (#{$min-tablets}) {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+.navigation_item {
+  display: block;
+
+  @media (#{$min_tablets}){
+    display: inline-block;
+    margin: 0 40px 0 0;
+  }
+}
+
+.navigation_link {
+  @include font_loader($primary-family, 3, 'n');
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  font-size: 0.85rem;
+
+  &:hover, &:focus, &:active, &:visited{
+    text-decoration: none;
+  }
+}
+
+.description_box {
+  width: 100%;
+}
+
+.copyright,
+.design_mark {
+  @include font_loader($primary-family, 3, 'n');
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+
+  @media (#{$max_tablets}){
+    display: block;
+  }
+}
+
+.design_mark {
+  color: $black;
+  text-decoration: none;
+
+  @media (#{$min-tablets}) {
+    margin-left: 2rem;
+    color: $gray;
+  }
+}
+.design_mark_link {
+  margin-left: 0.25rem;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.main_box {
+  position: relative;
+  line-height: 2;
+}
+
+.row {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  
+  @media (#{$max-tablets}) {
+    margin: 0;
+  }
+}
+

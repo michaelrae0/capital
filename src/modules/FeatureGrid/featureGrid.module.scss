@@ -1,0 +1,27 @@
+@import '../../styles/definitions/breakpoints';
+@import '../../styles/definitions/colors';
+
+.section {
+  padding: 6rem 0;
+
+  @media (#{$min-tablets}) {
+    padding: 8rem 0 10rem;
+  }
+}
+
+.container {
+  text-align: left;
+
+  @media (#{$min_tablets}) {
+    text-align: center;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+  margin: 0 auto;
+
+  @media (#{$min_tablets}) {
+    margin-bottom: 70px;
+  }
+}

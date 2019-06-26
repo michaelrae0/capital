@@ -1,0 +1,124 @@
+@import '../../styles/definitions/breakpoints';
+@import '../../styles/definitions/colors';
+@import '../../components/Header/header.module.scss';
+@import "../../styles/modifiers/animations";
+
+$landing-gutter: 24px;
+$gutter-desktop: 32px;
+
+.section {
+  padding: 0 $landing-gutter;
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: "";
+    background-color: $blue-filter;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  @media (#{$min-tablets}) {
+    padding: 12.5rem $gutter-desktop;
+    min-height: 710px;
+  }
+}
+
+.holdings_container { // container is a class in header
+  position: relative;
+  z-index: 3;
+}
+
+.company {
+  margin-bottom: 0;
+  letter-spacing: 4px;
+  line-height: 1.5rem;
+}
+
+.title {
+  max-width: 1000px;
+  margin-top: 1.6rem;
+  margin-bottom: 3.2rem;
+
+  @media (#{$min-tablets}) {
+    margin-top: 0.8rem;
+    margin-bottom: 2.8rem;
+  }
+}
+
+.link {
+  display: flex;
+  margin-bottom: 2.2rem;
+  text-decoration: none;
+  align-items: center;
+
+  @media (#{$min-tablets}) {
+    margin-left: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__text {
+    font-size: 1.5rem;
+    line-height: 3rem;
+    margin-left: 1rem;
+    font-weight: 400;
+  }
+
+  path {
+    transition: fill 0.25s ease-in-out;
+  }
+
+  &:hover {
+    color: $primary;
+
+    path {	
+      fill: $primary;	
+    }
+  }
+}
+
+.carot{	
+  height: 7.4px;	
+  width: 8.3px;
+  margin-left: 0px;
+  margin-right: 6px;
+
+  @media (#{$min-tablets}) {
+    margin-left: 3px;
+    margin-right: 9px;
+  }
+
+  path {
+    fill: $base-font-color;
+  }
+}
+
+.sideContent {
+  position: absolute;
+  z-index: 3;
+  top: 55%;
+  left: 25px;
+  transform: rotate(-90deg);
+  transform-origin: 0% 0%;
+  text-transform: uppercase; // not needed if H6
+  cursor: default;
+
+  transition: visibility 0.3s, opacity 0.3s ease-in-out;
+
+  @media (max-width: 1350px) {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__text {
+    font-size: 0.625rem;
+    letter-spacing: 4px;
+    font-weight: 300;
+  }
+}

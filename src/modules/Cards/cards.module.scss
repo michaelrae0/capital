@@ -1,0 +1,16 @@
+@import '../../styles/definitions/breakpoints';
+
+$desktop-gutter: 2rem;
+
+.section {
+  padding-top: 2.625rem;
+  @media (#{$min-tablets}) {
+    padding: 0 $desktop-gutter 9rem;
+  }
+}
+
+.row {
+  @media (#{$max-tablets}) {
+    justify-content: center;
+  }
+}

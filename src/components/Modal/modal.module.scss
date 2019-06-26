@@ -1,0 +1,67 @@
+@import "../../styles/definitions/breakpoints";
+@import "../../styles/definitions/colors";
+
+.modal_overlay {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - (1.75rem * 2));
+}
+
+.modal__wrapper {
+  display: none;
+  opacity: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 400;
+  max-width: 966px;
+  margin: 1.5rem;
+  width: auto;
+  position: relative;
+
+  @media (#{$min_tablets}) {
+    min-width: 875px;
+    margin: 4rem auto;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.modal__active {
+  display: block;
+  opacity: 1;
+}
+
+.modal__container {
+  box-shadow: 3px 3px 3rem rgba($black, 0.15);
+  transition: all 0.25s ease-out;
+  background: $white;
+  position: relative;
+  padding: 4rem 1.5rem;
+
+  @media (#{$min_tablets}) {
+    padding: 3rem;
+  }
+
+  &:hover {
+    box-shadow: 3px 3px 3rem rgba($black, 0.35);
+  }
+}
+
+.modal__close_button {
+  content: "";
+  position: absolute;
+  background: url(../../images/i--cross--gray.svg) no-repeat center / 100% auto;
+  width: 25px;
+  height: 25px;
+  stroke: 10px;
+  cursor: pointer;
+  z-index: 50;
+  right: 22px;
+  top: 17px;
+  @media (#{$min_tablets}) {
+    right: 28px;
+    top: 30px;
+    background: url(../../images/i--cross--gray.svg) no-repeat center / 100% auto;
+  }
+}

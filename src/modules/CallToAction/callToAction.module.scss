@@ -1,0 +1,45 @@
+@import '../../styles/definitions/breakpoints';
+@import '../../styles/definitions/fonts';
+@import '../../styles/definitions/whitespace';
+@import '../../styles/modifiers/text';
+
+.action_call {
+  &:hover {
+    color: $primary;
+
+    line {
+      stroke: $primary;
+    }
+  }
+
+  @media (#{$min_tablets}) {
+    margin-top: 0.5rem;
+    margin-left: 3.5rem;
+  }
+}
+
+.right_content {
+  white-space: nowrap;
+  margin: 2.5rem 0 2.125rem;
+
+  @media (#{$min_tablets}) {
+    margin: 1rem 0 0 11.25rem;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0px;
+  }
+
+  li, .li { // call to action rightContent
+    @include font_loader($primary-family, 7, 'n');
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin-bottom: 1rem;
+
+    @media(#{$min_tablets}) {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
