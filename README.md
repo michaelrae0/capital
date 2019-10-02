@@ -1,5 +1,7 @@
 Archon
 ------
+This is an example code repository for the site www.1251capital.com.
+
 This project is the Gatsby static site generator for a Contentful organization space.
 
 ## Setup
